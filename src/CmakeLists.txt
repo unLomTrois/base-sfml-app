@@ -1,0 +1,10 @@
+include_directories(${PROJECT_SOURCE_DIR}/include/)
+
+set(SFML_STATIC_LIBRARIES TRUE)
+find_package(SFML 2.5.1 COMPONENTS graphics window REQUIRED)
+
+add_library(application application.cpp)
+target_link_libraries(application sfml-graphics)
+
+add_executable(base-sfml-app main.cpp)
+target_link_libraries(base-sfml-app application)
