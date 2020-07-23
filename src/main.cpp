@@ -1,9 +1,9 @@
 #include "application.hpp"
 
 int main() {
-    Application app = Application("BASE SFML APP", 60, 1280, 720);
+  Application app = Application("BASE SFML APP", 60, 1280, 720);
 
-    app.show();
+  app.show();
 
-    return 0;
+  return 0;
 }

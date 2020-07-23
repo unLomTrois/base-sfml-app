@@ -7,19 +7,19 @@
 #include <SFML/Window/Window.hpp>
 
 class Application {
-public:
-	Application(const std::string& name, int fps_limit, int width, int height);
-	~Application();
+ public:
+  Application(const std::string &name, int fps_limit, int width, int height);
+  ~Application();
 
-	void eventHandler(const sf::Event &event);
+  void eventHandler(const sf::Event &event);
 
-	void show();
+  void show();
 
-private:
-	const std::string NAME;
-	const int FPS_LIMIT;
+ private:
+  const std::string NAME;
+  const int FPS_LIMIT;
 
-	sf::RenderWindow *window;
+  sf::RenderWindow *window;
 };
 
-#endif // APP_H
+#endif  // APP_H
