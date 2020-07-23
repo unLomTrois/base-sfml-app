@@ -1,7 +1,7 @@
 include_directories(${PROJECT_SOURCE_DIR}/include/)
 
-set(SFML_STATIC_LIBRARIES TRUE)
-find_package(SFML 2.5.1 COMPONENTS graphics window REQUIRED)
+set(SFML_DIR ${PROJECT_SOURCE_DIR}/lib/SFML-2.5.1/lib/cmake/SFML)
+find_package(SFML 2.5.1 COMPONENTS graphics REQUIRED)
 
 add_library(application application.cpp)
 target_link_libraries(application sfml-graphics)
