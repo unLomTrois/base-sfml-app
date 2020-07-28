@@ -11,15 +11,19 @@ class Application {
   Application(const std::string &name, int fps_limit, int width, int height);
   ~Application();
 
-  void eventHandler(const sf::Event &event);
-
-  void show();
+  void run();
 
  private:
   const std::string NAME;
   const int FPS_LIMIT;
 
   sf::RenderWindow *window;
+
+  void render();
+
+  void eventHandler(const sf::Event &event);
+
+  void inputHandler();
 };
 
 #endif  // APP_H

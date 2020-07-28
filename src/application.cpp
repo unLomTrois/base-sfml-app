@@ -11,6 +11,27 @@ Application::Application(const std::string &name, int fps_limit, int width, int 
 
 Application::~Application() {}
 
+void Application::run() {
+  while (window->isOpen()) {
+    this->inputHandler();
+
+    this->render();
+  }
+}
+
+void Application::render() {
+  window->clear(sf::Color::Red);
+
+  window->display();
+}
+
+void Application::inputHandler() {
+  sf::Event event;
+  while (window->pollEvent(event)) {
+    eventHandler(event);
+  }
+}
+
 void Application::eventHandler(const sf::Event &event) {
   switch (event.type) {
     case sf::Event::KeyPressed:
@@ -27,18 +48,5 @@ void Application::eventHandler(const sf::Event &event) {
       break;
     default:
       break;
-  }
-}
-
-void Application::show() {
-  while (window->isOpen()) {
-    sf::Event event;
-    while (window->pollEvent(event)) {
-      eventHandler(event);
-    }
-
-    window->clear(sf::Color::Red);
-
-    window->display();
   }
 }
